@@ -1,24 +1,34 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices.
-
--- For example, changing the initial geometry for new windows:
-config.initial_cols = 140
-config.initial_rows = 80
-
--- or, changing the font size and color scheme.
--- You can specify some parameters to influence the font selection;
--- for example, this selects a Bold, Italic font variant.
-config.font = wezterm.font {
-  family = 'JetBrains Mono',
-  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+-- This is where you actually apply your config choices
+config = {
+	automatically_reload_config = true,
+	enable_tab_bar = false,
+	window_close_confirmation = "NeverPrompt",
+	window_decorations = "RESIZE",
+	default_cursor_style = "BlinkingBar",
+	color_scheme = "Nord (Gogh)",
+	font = wezterm.font("MesloLGS Nerd Font Mono"),
+	font_size = 13,
+	initial_cols = 120,
+	initial_rows = 60,
 }
-config.font_size = 12
-config.color_scheme = 'AdventureTime'
 
--- Finally, return the configuration to wezterm:
+config.colors = {
+	foreground = "#CBE0F0",
+	background = "#011423",
+	cursor_bg = "#47FF9C",
+	cursor_border = "#47FF9C",
+	cursor_fg = "#011423",
+	selection_bg = "#033259",
+	selection_fg = "#CBE0F0",
+	ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
+	brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
+}
+
+-- and finally, return the configuration to wezterm
 return config

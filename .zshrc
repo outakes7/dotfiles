@@ -5,6 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -93,11 +100,11 @@ export LC_ALL=ko_KR.UTF-8
 export LC_CTYPE=ko_KR.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='vim'
+else
+    export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -139,14 +146,24 @@ alias ta='tmux a'
 alias tk='tmux kill-session'
 
 # Aliases: eza
-alias ls='eza'
-alias ll='eza -l'
-alias la='eza -a'
+alias ls='eza -la'
 
 # Aliases: lsd
 alias l='lsd -l'
 
+# Aliases: homebrew
+alias bl='brew list'
+alias bi='brew install'
+alias bu='brew uninstall'
+alias ml='mas list'
+alias ms='mas search'
+alias mi='mas install'
+alias mu='mas uninstall'
+
+# 1Password
 source /Users/outakes/.config/op/plugins.sh
+
+# zoxide
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

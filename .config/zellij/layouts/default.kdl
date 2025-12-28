@@ -1,0 +1,15 @@
+layout {
+    
+    // 화면 첫번째줄: 탭 바
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    
+    pane
+
+    // 팁과 단축키가 표시되는 상태 바
+    pane size=1 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+
+}
