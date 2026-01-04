@@ -14,7 +14,7 @@ config = {
 	color_scheme = "Nord (Gogh)",
 	font = wezterm.font("MesloLGS Nerd Font Mono"),
 	font_size = 13,
-	initial_cols = 120,
+	initial_cols = 150,
 	initial_rows = 60,
 }
 

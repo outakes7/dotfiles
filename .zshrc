@@ -142,7 +142,7 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # Aliases: Zellij
 alias zl='Zellij ls'
 alias za='Zellij a'
-alias zk='Zellij k'
+alias zda='Zellij da'
 
 # Aliases: tmux
 alias tn='tmux new -s '
