@@ -12,7 +12,11 @@ config = {
 	window_decorations = "RESIZE",
 	default_cursor_style = "BlinkingBar",
 	color_scheme = "Nord (Gogh)",
-	font = wezterm.font("MesloLGS Nerd Font Mono"),
+	font = wezterm.font_with_fallback({
+		"JetBrains Mono", -- 메인 코드 폰트
+		"D2Coding", -- 또는 "NanumGothicCoding"
+		"NanumBarunGothic", -- 일반 UI용
+	}),
 	font_size = 13,
 	initial_cols = 150,
 	initial_rows = 60,
