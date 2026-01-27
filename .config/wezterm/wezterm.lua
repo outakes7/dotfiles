@@ -13,9 +13,10 @@ config = {
 	default_cursor_style = "BlinkingBar",
 	color_scheme = "Nord (Gogh)",
 	font = wezterm.font_with_fallback({
-		"JetBrains Mono", -- 메인 코드 폰트
-		"D2Coding", -- 또는 "NanumGothicCoding"
-		"NanumBarunGothic", -- 일반 UI용
+		{ family = "JetBrainsMono Nerd Font", weight = "Regular" }, -- 1순위: 영문+아이콘
+		{ family = "NanumSquare", weight = "Regular" }, -- 2순위: 한글 (macOS 기본)
+		-- 또는 { family = "D2Coding", weight = "Regular" },         -- D2Coding (Linux/mac)
+		-- 또는 { family = "Noto Sans KR", weight = "Regular" },     -- Noto Sans (범용)JetBrains Mono", -- 메인 코드 폰트
 	}),
 	font_size = 13,
 	initial_cols = 150,
